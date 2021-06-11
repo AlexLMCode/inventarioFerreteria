@@ -1,0 +1,3 @@
+id;nombre;descripcion;precioCompra;precioVenta;cantidad;cantidadMinimaStock;idProveedor
+2000;Martillo;Martillo con mango de goma;50000.0;60000.0;90;10;3000
+87;tuerca;tuerca e;89.0;98.0;1900;10;3000
