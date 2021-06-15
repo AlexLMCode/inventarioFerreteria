@@ -29,7 +29,6 @@ public class Aplicacion {
     public static final int ELIMINAR = 4;
     public static final int LISTAR = 5;
 
-
     public static final int SI = 1;
     public static final int NO = 2;
 
@@ -124,7 +123,8 @@ public class Aplicacion {
                                     if (cliente != null) {
                                         Cliente.mostrarDatosCliente(cliente);
                                     } else {
-                                        mostrarMensaje("No se encontró un cliente con el número de cédula especificado.");
+                                        mostrarMensaje(
+                                                "No se encontró un cliente con el número de cédula especificado.");
                                     }
                                 } else {
                                     mostrarMensaje(
@@ -141,7 +141,8 @@ public class Aplicacion {
                                         Cliente.mostrarDatosCliente(cliente);
                                         getData.guardarDatosInventario(clientes, proveedores, productos, facturas);
                                     } else {
-                                        mostrarMensaje("No se encontró un cliente con el número de cédula especificado.");
+                                        mostrarMensaje(
+                                                "No se encontró un cliente con el número de cédula especificado.");
                                     }
                                 } else {
                                     mostrarMensaje(
@@ -346,7 +347,8 @@ public class Aplicacion {
                                                 "MENSAJE: No se puede crear una factura mientras que no hallan productos.");
                                     }
                                 } else {
-                                    mostrarMensaje("MENSAJE: No se puede crear una factura mientras que no hallan clientes.");
+                                    mostrarMensaje(
+                                            "MENSAJE: No se puede crear una factura mientras que no hallan clientes.");
                                 }
 
                                 break;
@@ -410,7 +412,7 @@ public class Aplicacion {
         System.out.println("1. Gestión Clientes");
         System.out.println("2. Gestión Proveedores");
         System.out.println("3. Gestión Productos");
-//        System.out.println("4. Gestión Facturación");
+        // System.out.println("4. Gestión Facturación");
         System.out.println("0. Salir");
     }
 
@@ -500,8 +502,8 @@ public class Aplicacion {
     }
 
     public static void mostrarMensaje(String mensaje) {
-            System.out.println();
-            System.out.print(mensaje);
-            System.out.println();
-        }
+        System.out.println();
+        System.out.print(mensaje);
+        System.out.println();
+    }
 }

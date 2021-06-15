@@ -56,7 +56,8 @@ public class Proveedor {
 
                 Aplicacion.mostrarMensaje(String.format("MENSAJE: Se ha eliminado el proveedor con ID %d.\n", id));
             } else {
-                Aplicacion.mostrarMensaje("MENSAJE: No puede eliminar este proveedor. Tiene asociado uno o más productos.");
+                Aplicacion.mostrarMensaje(
+                        "MENSAJE: No puede eliminar este proveedor. Tiene asociado uno o más productos.");
                 Aplicacion.continuar();
             }
         } else {
@@ -77,11 +78,12 @@ public class Proveedor {
         do {
             telefono = Aplicacion.capturarTelefono("Digite el nuevo número de teléfono proveedor");
 
-            if (telefono <= 0) {
-                Aplicacion.mostrarMensaje("MENSAJE: El número de teléfono debe ser un valor positivo.");
+            if (String.valueOf(telefono).length() < 10 || String.valueOf(telefono).length() > 10) {
+                Aplicacion.mostrarMensaje(
+                        "MENSAJE: El número de teléfono debe ser un valor positivo igual a 10 digitos.");
                 Aplicacion.continuar();
             }
-        } while (telefono <= 0);
+        } while (String.valueOf(telefono).length() < 10 || String.valueOf(telefono).length() > 10);
 
         direccion = Aplicacion.capturarCadenaCaracteres("Digite la nueva dirección del proveedor");
 
@@ -149,11 +151,11 @@ public class Proveedor {
         do {
             telefono = Aplicacion.capturarTelefono("Digite el número de teléfono del nuevo proveedor");
 
-            if (telefono <= 0) {
-                Aplicacion.mostrarMensaje("MENSAJE: El número de teléfono debe ser un valor positivo.");
+            if (String.valueOf(telefono).length() < 10 || String.valueOf(telefono).length() > 10) {
+                Aplicacion.mostrarMensaje("MENSAJE: El número de teléfono debe ser un valor positivo de 10 digitos.");
                 Aplicacion.continuar();
             }
-        } while (telefono <= 0);
+        } while (String.valueOf(telefono).length() < 10 || String.valueOf(telefono).length() > 10);
 
         direccion = Aplicacion.capturarCadenaCaracteres("Digite la dirección del nuevo proveedor");
 

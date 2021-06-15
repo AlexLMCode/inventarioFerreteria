@@ -19,7 +19,8 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int id, String nombre, String descripcion, double precioCompra, double precioVenta, int cantidad, int cantidadMinimaStock, int idProveedor) {
+    public Producto(int id, String nombre, String descripcion, double precioCompra, double precioVenta, int cantidad,
+            int cantidadMinimaStock, int idProveedor) {
         super();
         this.id = id;
         this.nombre = nombre;
@@ -72,7 +73,8 @@ public class Producto {
                 Aplicacion.mostrarMensaje(String.format("Se ha eliminado el producto con el ID %d.\n", id));
 
             } else {
-                Aplicacion.mostrarMensaje("MENSAJE: No se puede eliminar el producto porque está asociado a una factura.");
+                Aplicacion.mostrarMensaje(
+                        "MENSAJE: No se puede eliminar el producto porque está asociado a una factura.");
                 Aplicacion.continuar();
             }
 
@@ -130,7 +132,8 @@ public class Producto {
             }
 
             if (precioVenta <= precioCompra) {
-                Aplicacion.mostrarMensaje("MENSAJE: El precio de venta no puede ser menor o igual al precio de compra.");
+                Aplicacion
+                        .mostrarMensaje("MENSAJE: El precio de venta no puede ser menor o igual al precio de compra.");
                 precioVenta = 0;
             }
         } while (precioVenta <= 0);
@@ -145,7 +148,8 @@ public class Producto {
         } while (cantidad <= 0);
 
         do {
-            cantidadMinimaStock = Aplicacion.capturarNumeroEntero("Digite la neva cantidad mínima de stock para el producto");
+            cantidadMinimaStock = Aplicacion
+                    .capturarNumeroEntero("Digite la neva cantidad mínima de stock para el producto");
 
             if (cantidadMinimaStock <= 0) {
                 Aplicacion.mostrarMensaje("MENSAJE: Debe escribir una cantidad mínima de stock positiva.");
@@ -163,7 +167,8 @@ public class Producto {
             if (Proveedor.buscarProveedorPorId(proveedores, idProveedor) != null) {
                 break;
             } else {
-                Aplicacion.mostrarMensaje(String.format("MENSAJE: No existe un proveedor con el %d especificado.\n", idProveedor));
+                Aplicacion.mostrarMensaje(
+                        String.format("MENSAJE: No existe un proveedor con el %d especificado.\n", idProveedor));
 
             }
 
@@ -253,16 +258,17 @@ public class Producto {
         } while (precioCompra <= 0);
 
         do {
-            precioVenta = Aplicacion.capturarNumeroReal("Digite el precio de compra para el nuevo producto");
+            precioVenta = Aplicacion.capturarNumeroReal("Digite el precio de venta para el nuevo producto");
 
             if (precioVenta <= 0) {
-                Aplicacion.mostrarMensaje("MENSAJE: El precio de compra no puede ser menor o igual a 0.");
+                Aplicacion.mostrarMensaje("MENSAJE: El precio de venta no puede ser menor o igual a 0.");
                 Aplicacion.continuar();
                 continue;
             }
 
             if (precioVenta <= precioCompra) {
-                Aplicacion.mostrarMensaje("MENSAJE: El precio de ventana no puede ser menor o igual al precio de compra.");
+                Aplicacion
+                        .mostrarMensaje("MENSAJE: El precio de venta no puede ser menor o igual al precio de compra.");
                 Aplicacion.continuar();
                 precioVenta = 0;
             }
@@ -278,7 +284,8 @@ public class Producto {
         } while (cantidad <= 0);
 
         do {
-            cantidadMinimaStock = Aplicacion.capturarNumeroEntero("Digite la cantidad mínima de stock para el nuevo producto");
+            cantidadMinimaStock = Aplicacion
+                    .capturarNumeroEntero("Digite la cantidad mínima de stock para el nuevo producto");
 
             if (cantidadMinimaStock <= 0) {
                 Aplicacion.mostrarMensaje("MENSAJE: Debe escribir una cantidad mínima de stock positiva.");
